@@ -1,0 +1,76 @@
+*{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+Body{
+    padding-top: 100px;
+    color: #7c8d87;
+	background-image: url(../image/fundo.png)
+}
+
+.menu_personalizado{
+	background-color: #31bc86;
+}
+
+.titulo > header h1 {
+	font-size: 2.125em;
+	line-height: 1.7;
+	margin: 0 auto;
+	text-align: center;
+	font-weight: 300;
+	background: rgba(0,0,0,0.01);
+}
+
+.corpo {
+	line-height: 1.7em;
+	margin: 0 auto;
+	padding: 1em 0 2em;
+	width: 90%;
+	max-width: 500px;
+	overflow: hidden;
+}
+.corpo > h2 {
+	color: #94999E;
+	font-size: 2em;	
+	font-weight: 300;
+}
+
+.button {
+	background-color:#599bb3;
+	border-radius:2px;
+	color:#ffffff;
+	font-size:20px;
+	font-weight:lighter;
+	padding:5x 10px;
+}
+
+table{
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    width: 100%;
+    background: #fff;
+}
+
+td,th {
+    padding: 0.70em 1em;
+    text-align: left;
+    border:1px solid #CCC;
+}
+
+th {
+    background-color: #31bc86;
+    font-weight: normal;
+    color: #fff;
+    white-space: pre-wrap;
+    border:1px solid #CCC;
+}
+
+footer{
+	background: #31bc86;
+	padding: 50px;
+	color: #fff;
+}
+
+
+
+

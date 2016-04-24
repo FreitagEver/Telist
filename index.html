@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<!-- define a viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.2">
+<meta name="description" content="Tizen basic " />
+
+<title>TELIST</title>
+
+<!-- Adiciona o Bootstrap -->
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+
+<!-- Adicionar o CSS personalizado -->
+<link rel="stylesheet" href="css/style.css" />
+
+<!-- Fonte do google -->
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+</head>
+<!-- Inicia o corpo do app -->
+<body data-spy="scroll" data-target=".menu-navegacao" data-offset="80">
+<!-- Inicia o menu de navegação -->
+	<nav class="navbar navbar-default navbar-fixed-top menu_personalizado" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-navegacao">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                </button>
+				<a class="navbar-brand" href="index.html">TELIST</a>
+			</div>
+			<div class="collapse navbar-collapse menu-navegacao" id="menu-navegacao">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#tabela">Lista de Contato</a></li>
+					<li><a href="#addContato">Adicionar Contato</a></li>
+				</ul>
+			</div>
+		</div>	
+	</nav>
+<!-- //Fim do menu de navegação -->	
+<!--Inicio da tabela com os contatos-->
+	<section id="tabela">
+		<div class="container">
+			<div class="col-xs-12">
+				<center class="h2">Lista Telefônica Pessoal!</center>
+				<div class="table-responsive">
+					<table class="table">
+
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>	
+<!-- //Fim da tabela com os contatos -->
+<!-- Inicio do form de contato-->
+
+	<center class="h2">Adicionar Contato:</center>
+
+	<section id="addContato">
+		<div class="container">
+			<div class="col-xs-12">
+				<form class="form-horizontal" id="frmCadastro">
+					<div class="form-group">
+						<label for="txtNome" class="col-sm-2 control-label">Nome:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control input-lg" id="txtNome"
+								placeholder="Nome" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="txtSobrenome" class="col-sm-2 control-label">Sobrenome:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control input-lg" id="txtSobrenome"
+								placeholder="Sobrenome" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="txtTelefone" class="col-sm-2 control-label">Telefone Fixo:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control input-lg" maxlength="14"
+								onkeypress="masTelefone(this)" id="txtTelefone"
+								placeholder="Telefone Fixo" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="txtCelular" class="col-sm-2 control-label">Celular:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control input-lg" maxlength="14"
+								onkeypress="masCelular(this)" id="txtCelular" placeholder="Celular" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="txtEndereco" class="col-sm-2 control-label">Endereço:</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control input-lg" id="txtEndereco"
+								placeholder="Endereço" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="txtEmail" class="col-sm-2 control-label">E-mail:</label>
+						<div class="col-sm-10">
+							<input type="email" class="form-control input-lg" id="txtEmail"
+								placeholder="E-mail" />
+						</div>
+					</div>
+
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">	
+								<div class="form-group">
+									<center>
+										<button type="submit" id="btnSalvar" onclick="Adicionar()"
+											class="btn btn-success btn-lg">Salvar</button>
+										<button type="reset" class="btn btn-default btn-lg">Limpar
+											Campos</button>
+										<button type="button"
+											onclick="javascript:window.location='index.html';"
+											class="btn btn-danger btn-lg">Cancelar</button>
+									</center>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+<!-- //Fim do form de contatos -->
+<!-- Modal com os detalhes do contato -->
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Informações do
+						Contato:</h4>
+				</div>
+				<div class="modal-body">
+					<valor> </valor>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Adiciona os Script do app-->
+	<script type="text/javascript" src="./js/jquery.mobile-1.4.4.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="./js/funcoes.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+</body>
+<!-- //fim do corpo do app -->
+
+<footer>
+	<div class="container">	
+		<div class="row">
+			<div class="col-sm-9">
+				&copy<small>Todos os Direitos Reservados!</small>
+			</div>
+			<div class="col-sm-3">
+				<small>Desenvolvido por: </small><strong>Everton Freitag</strong>
+			</div>
+		</div>
+	</div>
+</footer>
+</html>

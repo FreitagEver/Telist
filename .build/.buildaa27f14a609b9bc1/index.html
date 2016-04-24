@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.2">
+<meta name="description" content="Tizen basic " />
+<title>TELIST</title>
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="./js/jquery.mobile-1.4.4.min.js"></script>
+<script type="text/javascript" src="./js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="./js/funcoes.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+</head>
+<body class="body">
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Telist</span> <span class="icon-bar"></span>
+					<span class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">TELIST</a>
+			</div>
+		</div>
+	</nav>
+	<center class="h2">Lista Telefônica Pessoal!</center>
+	<div class="table-responsive">
+		<table class="table">
+
+		</table>
+	</div>
+	<form class="form" id="frmCadastro">
+		<div class="form-group">
+			<label for="txtNome">Nome:</label>
+			<div class="form-group">
+				<input type="text" class="form-control" id="txtNome"
+					placeholder="Nome" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="txtSobrenome">Sobrenome:</label>
+			<div class="form-group">
+				<input type="text" class="form-control" id="txtSobrenome"
+					placeholder="Sobrenome" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="txtTelefone">Telefone Fixo:</label>
+			<div class="form-group">
+				<input type="text" class="form-control" maxlength="14"
+					onkeypress="masTelefone(this)" id="txtTelefone"
+					placeholder="Telefone Fixo" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="txtCelular">Celular:</label>
+			<div class="form-group">
+				<input type="text" class="form-control" maxlength="14"
+					onkeypress="masCelular(this)" id="txtCelular" placeholder="Celular" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="txtEndereco">Endereço:</label>
+			<div class="form-group">
+				<input type="text" class="form-control" id="txtEndereco"
+					placeholder="Endereço" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="txtEmail">E-mail:</label>
+			<div class="form-group">
+				<input type="email" class="form-control" id="txtEmail"
+					placeholder="E-mail" />
+			</div>
+		</div>
+		<div class="form-group">
+			<center>
+				<button type="submit" id="btnSalvar" onclick="Adicionar"
+					class="btn btn-success">Salvar</button>
+				<button type="reset" class="btn btn-default ">Limpar
+					Campos</button>
+				<button type="button"
+					onclick="javascript:window.location='index.html';"
+					class="btn btn-danger">Cancelar</button>
+			</center>
+		</div>
+	</form>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Informações do
+						Contato:</h4>
+				</div>
+				<div class="modal-body">
+					<valor> </valor>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
